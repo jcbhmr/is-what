@@ -1,9 +1,11 @@
-import { getType } from './getType.js'
-import { AnyClass, isType } from './isType.js'
+import getType from "./getType.js";
+import isType, { AnyClass } from "./isType.js";
 
 type GlobalClassName = {
-  [K in keyof typeof globalThis]: (typeof globalThis)[K] extends AnyClass ? K : never
-}[keyof typeof globalThis]
+  [K in keyof typeof globalThis]: (typeof globalThis)[K] extends AnyClass
+    ? K
+    : never;
+}[keyof typeof globalThis];
 
 /**
  * Checks if a value is an instance of a class or a class name. Useful when you
@@ -21,26 +23,35 @@ type GlobalClassName = {
  * @param value The value to recursively check
  * @param class_ A string or class that the value should be an instance of
  */
-export function isInstanceOf<T extends AnyClass>(value: unknown, class_: T): value is T
-export function isInstanceOf<K extends GlobalClassName>(
+export default function isInstanceOf<T extends AnyClass>(
+  value: unknown,
+  class_: T
+): value is T;
+export default function isInstanceOf<K extends GlobalClassName>(
   value: unknown,
   className: K
-): value is (typeof globalThis)[K]
-export function isInstanceOf(value: unknown, className: string): value is object
-export function isInstanceOf(value: unknown, classOrClassName: AnyClass | string): boolean {
-  if (typeof classOrClassName === 'function') {
+): value is (typeof globalThis)[K];
+export default function isInstanceOf(
+  value: unknown,
+  className: string
+): value is object;
+export default function isInstanceOf(
+  value: unknown,
+  classOrClassName: AnyClass | string
+): boolean {
+  if (typeof classOrClassName === "function") {
     for (let p = value; p; p = Object.getPrototypeOf(p)) {
       if (isType(p, classOrClassName)) {
-        return true
+        return true;
       }
     }
-    return false
+    return false;
   } else {
     for (let p = value; p; p = Object.getPrototypeOf(p)) {
       if (getType(p) === classOrClassName) {
-        return true
+        return true;
       }
     }
-    return false
+    return false;
   }
 }
