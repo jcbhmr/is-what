@@ -35,10 +35,10 @@ test("false for boxed primitives", () => {
 test("false for functions", () => {
   assert.equal(
     isObject(() => {}),
-    false
+    false,
   );
   assert.equal(
     isObject(function () {}),
-    false
+    false,
   );
 });

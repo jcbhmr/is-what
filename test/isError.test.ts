@@ -12,7 +12,7 @@ test("false when not errors", () => {
   assert.equal(isError([]), false);
   assert.equal(
     isError(() => {}),
-    false
+    false,
   );
   assert.equal(isError("hi"), false);
   assert.equal(isError(1), false);

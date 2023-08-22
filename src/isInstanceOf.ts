@@ -25,19 +25,19 @@ type GlobalClassName = {
  */
 export default function isInstanceOf<T extends AnyClass>(
   value: unknown,
-  class_: T
+  class_: T,
 ): value is T;
 export default function isInstanceOf<K extends GlobalClassName>(
   value: unknown,
-  className: K
+  className: K,
 ): value is (typeof globalThis)[K];
 export default function isInstanceOf(
   value: unknown,
-  className: string
+  className: string,
 ): value is object;
 export default function isInstanceOf(
   value: unknown,
-  classOrClassName: AnyClass | string
+  classOrClassName: AnyClass | string,
 ): boolean {
   if (typeof classOrClassName === "function") {
     for (let p = value; p; p = Object.getPrototypeOf(p)) {

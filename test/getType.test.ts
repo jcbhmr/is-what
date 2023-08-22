@@ -35,15 +35,15 @@ test("works with oddballs", () => {
 test("works with functions", () => {
   assert.equal(
     getType(() => {}),
-    "Function"
+    "Function",
   );
   assert.equal(
     getType(function () {}),
-    "Function"
+    "Function",
   );
   assert.equal(
     getType(function* () {}),
-    "GeneratorFunction"
+    "GeneratorFunction",
   );
 });
 

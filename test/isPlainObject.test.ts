@@ -39,14 +39,14 @@ test("false with arguments object", () => {
 test("false with functions", () => {
   assert.equal(
     isPlainObject(() => {}),
-    false
+    false,
   );
   assert.equal(
     isPlainObject(function () {}),
-    false
+    false,
   );
   assert.equal(
     isPlainObject(function* () {}),
-    false
+    false,
   );
 });

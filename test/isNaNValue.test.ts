@@ -16,7 +16,7 @@ test("false with non-NaN", () => {
   assert.equal(isNaNValue([]), false);
   assert.equal(
     isNaNValue(() => {}),
-    false
+    false,
   );
   assert.equal(isNaNValue(new Map()), false);
   assert.equal(isNaNValue(new Set()), false);

@@ -26,6 +26,6 @@ test("false when anything else", () => {
   assert.equal(isEmptyString([]), false);
   assert.equal(
     isEmptyString(() => {}),
-    false
+    false,
   );
 });

@@ -4,19 +4,19 @@ import isFunction from "../src/isFunction";
 test("works with functions", () => {
   assert.equal(
     isFunction(() => {}),
-    true
+    true,
   );
   assert.equal(
     isFunction(function () {}),
-    true
+    true,
   );
   assert.equal(
     isFunction(function* () {}),
-    true
+    true,
   );
   assert.equal(
     isFunction(async function () {}),
-    true
+    true,
   );
 });
 

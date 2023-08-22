@@ -6,7 +6,7 @@ import isSymbol from "./isSymbol.js";
 import isUndefined from "./isUndefined.js";
 
 export default function isPrimitive(
-  payload: any
+  payload: any,
 ): payload is boolean | null | undefined | number | string | symbol {
   return (
     isBoolean(payload) ||

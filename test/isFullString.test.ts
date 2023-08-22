@@ -28,7 +28,7 @@ test("false when anything else", () => {
   assert.equal(isFullString([]), false);
   assert.equal(
     isFullString(() => {}),
-    false
+    false,
   );
   assert.equal(isFullString(new Map()), false);
   assert.equal(isFullString(new EventTarget()), false);

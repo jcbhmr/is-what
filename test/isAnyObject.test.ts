@@ -16,15 +16,15 @@ test("false when array", () => {
 test("false with functions", () => {
   assert.equal(
     isAnyObject(() => {}),
-    false
+    false,
   );
   assert.equal(
     isAnyObject(function () {}),
-    false
+    false,
   );
   assert.equal(
     isAnyObject(function* () {}),
-    false
+    false,
   );
 });
 

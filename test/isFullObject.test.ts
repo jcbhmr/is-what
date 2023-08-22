@@ -14,7 +14,7 @@ test("false with empty objects", () => {
 test("false when Object.create(null) with properties", () => {
   assert.equal(
     isFullObject(Object.assign(Object.create(null), { a: 1 })),
-    false
+    false,
   );
 });
 

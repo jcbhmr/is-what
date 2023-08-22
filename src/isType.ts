@@ -10,7 +10,7 @@ export type AnyClass = new (...args: any[]) => any;
  */
 export default function isType<T extends AnyFunction | AnyClass>(
   payload: any,
-  type: T
+  type: T,
 ): payload is T {
   if (!(type instanceof Function)) {
     throw new TypeError("Type must be a function");

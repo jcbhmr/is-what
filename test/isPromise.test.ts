@@ -52,14 +52,14 @@ test("false with .then()-able objects that aren't promises", () => {
 test("false with functions", () => {
   assert.equal(
     isPromise(() => {}),
-    false
+    false,
   );
   assert.equal(
     isPromise(function () {}),
-    false
+    false,
   );
   assert.equal(
     isPromise(function* () {}),
-    false
+    false,
   );
 });

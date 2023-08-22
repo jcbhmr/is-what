@@ -15,12 +15,12 @@ type TypeGuard<A, B extends A> = (payload: A) => payload is B;
  */
 export default function isOneOf<A, B extends A, C extends A>(
   a: TypeGuard<A, B>,
-  b: TypeGuard<A, C>
+  b: TypeGuard<A, C>,
 ): TypeGuard<A, B | C>;
 export default function isOneOf<A, B extends A, C extends A, D extends A>(
   a: TypeGuard<A, B>,
   b: TypeGuard<A, C>,
-  c: TypeGuard<A, D>
+  c: TypeGuard<A, D>,
 ): TypeGuard<A, B | C | D>;
 export default function isOneOf<
   A,
@@ -32,7 +32,7 @@ export default function isOneOf<
   a: TypeGuard<A, B>,
   b: TypeGuard<A, C>,
   c: TypeGuard<A, D>,
-  d: TypeGuard<A, E>
+  d: TypeGuard<A, E>,
 ): TypeGuard<A, B | C | D | E>;
 export default function isOneOf<
   A,
@@ -46,14 +46,14 @@ export default function isOneOf<
   b: TypeGuard<A, C>,
   c: TypeGuard<A, D>,
   d: TypeGuard<A, E>,
-  e: TypeGuard<A, F>
+  e: TypeGuard<A, F>,
 ): TypeGuard<A, B | C | D | E | F>;
 export default function isOneOf(
   a: AnyFunction,
   b: AnyFunction,
   c?: AnyFunction,
   d?: AnyFunction,
-  e?: AnyFunction
+  e?: AnyFunction,
 ): (value: unknown) => boolean {
   return (value) =>
     a(value) ||

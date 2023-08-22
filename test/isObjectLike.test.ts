@@ -43,14 +43,14 @@ test("true with array-like objects", () => {
 test("true with functions", () => {
   assert.equal(
     isObjectLike(() => {}),
-    true
+    true,
   );
   assert.equal(
     isObjectLike(function () {}),
-    true
+    true,
   );
   assert.equal(
     isObjectLike(function* () {}),
-    true
+    true,
   );
 });
